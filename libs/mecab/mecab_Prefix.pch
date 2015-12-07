@@ -1,0 +1,2 @@
+#define DIC_VERSION 102
+#define MECAB_DEFAULT_RC "./"
