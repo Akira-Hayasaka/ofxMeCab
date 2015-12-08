@@ -39,6 +39,7 @@ void ofxMeCab::parse(string jpTxt)
 void ofxMeCab::exit()
 {
     waitForThread();
+    mecab = NULL;
 }
 
 void ofxMeCab::threadedFunction()
