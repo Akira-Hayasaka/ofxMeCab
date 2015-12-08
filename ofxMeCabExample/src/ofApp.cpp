@@ -12,7 +12,17 @@ void ofApp::setup()
     ofBuffer buf = ofBufferFromFile("sample.txt");
     ofBuffer::Lines lines = buf.getLines();
     for (auto line : lines)
-        lineQ.push_back(line);
+    {
+        vector<string> splitted = ofSplitString(line, "。");
+        if (!splitted.empty())
+        {
+            for (auto chunk : splitted)
+            {
+                if (chunk != "")
+                    lineQ.push_back(chunk);
+            }
+        }
+    }
     
     startThread();
 }
