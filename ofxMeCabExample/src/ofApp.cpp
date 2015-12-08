@@ -3,6 +3,9 @@
 void ofApp::setup()
 {
     ofSetLogLevel(OF_LOG_VERBOSE);
+    
+    // 辞書をフルパスで登録。ofxMeCab/dict/ipadicに入っているので、
+    // コンパイルするマシンのパスに変更してください。
     mecab.setDict("/Users/akira/oF/oF090/addons/ofxMeCab/dict/ipadic");
     ofAddListener(mecab.parseEvent, this, &ofApp::onParse);
     
@@ -23,6 +26,8 @@ void ofApp::exit()
 void ofApp::draw()
 {
     ofDrawBitmapStringHighlight("fps:" + ofToString(ofGetFrameRate(), 2), 10, 20);
+    ofDrawBitmapStringHighlight("press space bar to read next line", 10, 40);
+    ofDrawBitmapStringHighlight("example dumps morph obj fields on console", 10, 60);
 }
 
 void ofApp::threadedFunction()

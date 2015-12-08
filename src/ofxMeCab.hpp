@@ -46,6 +46,7 @@ struct MorphObj
     string hatsuon;
 };
 
+
 class ofxMeCab : public ofThread
 {
 public:
