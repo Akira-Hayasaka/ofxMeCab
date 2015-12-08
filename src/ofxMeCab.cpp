@@ -86,6 +86,7 @@ void ofxMeCab::threadedFunction()
                     }
                     else
                     {
+                        mo.bComplete = false;
                         mo.genkei = "err";
                         mo.hinshi = "err";
                         mo.hinshiSaibunrui1 = "err";

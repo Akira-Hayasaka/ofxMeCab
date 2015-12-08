@@ -3,7 +3,7 @@
 #include "ofMain.h"
 #include "ofxMeCab.hpp"
 
-class ofApp : public ofBaseApp
+class ofApp : public ofBaseApp, public ofThread
 {
     
 public:
@@ -25,10 +25,15 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
+protected:
+    
+    void threadedFunction();
+    
 private:
     
     void onParse(MorphObj& mo);
     
+    const bool bSpeak = true;
     ofxMeCab mecab;
     deque<MorphObj> morphObjs;
     deque<string> lineQ;

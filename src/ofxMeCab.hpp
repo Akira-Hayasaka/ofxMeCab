@@ -14,6 +14,11 @@
 
 struct MorphObj
 {
+    MorphObj()
+    {
+        bComplete = true;;
+    }
+    
     void dump()
     {
         ofLogNotice("ofxMeCab::MorphObj") << "表層: " << hyousou;
@@ -28,6 +33,7 @@ struct MorphObj
         ofLogNotice("ofxMeCab::MorphObj") << "発音: " << hatsuon;
     }
     
+    bool bComplete;
     string hyousou;
     string genkei;
     string hinshi;
